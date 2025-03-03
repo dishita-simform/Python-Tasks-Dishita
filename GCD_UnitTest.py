@@ -9,7 +9,7 @@ class TestWordNumberGCD(unittest.TestCase):
         self.assertEqual(word_to_number("two"), 2)
         self.assertEqual(word_to_number("eight"), 8)
         self.assertEqual(word_to_number("zero"), 0)
-        self.assertEqual(word_to_number("minusfive"), None)  # Invalid case
+        self.assertEqual(word_to_number("minusfive"), None)
 
     def test_number_to_word(self):
         self.assertEqual(number_to_word(1), "one")
