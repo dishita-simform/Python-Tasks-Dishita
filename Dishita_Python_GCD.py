@@ -8,7 +8,7 @@ def word_to_number(word):
     i = 0
     
     if word.startswith("minus"):
-        return None  # Negative numbers are not allowed
+        return None  
     
     while i < len(word):
         for key in word_map:

@@ -1,14 +1,13 @@
 from collections import defaultdict
 
 def group_anagrams(strs):
-    anagrams = defaultdict(list)  # Dictionary to store grouped anagrams
+    anagrams = defaultdict(list) 
 
     for word in strs:
-        sorted_word = "".join(sorted(word))  # Sort the characters of the word
-        anagrams[sorted_word].append(word)  # Group words with the same sorted key
+        sorted_word = "".join(sorted(word))  
+        anagrams[sorted_word].append(word)  
 
-    return list(anagrams.values())  # Convert dictionary values to a list of lists
+    return list(anagrams.values()) 
 
-# Taking user input
 strs = input("Enter words separated by spaces: ").split()
 print(group_anagrams(strs))

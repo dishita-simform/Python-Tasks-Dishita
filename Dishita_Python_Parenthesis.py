@@ -15,7 +15,6 @@ def generate_parentheses(n):
     backtrack("", 0, 0)
     return result
 
-# Taking user input
 n = int(input("Enter the Number of Pairs of Parentheses: "))
 
 if 1 <= n <= 8:
