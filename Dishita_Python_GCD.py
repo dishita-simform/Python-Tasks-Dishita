@@ -32,7 +32,8 @@ def gcd(a, b):
 def compute_gcd(word1, word2):
     num1, num2 = word_to_number(word1), word_to_number(word2)
     
-    if num1 is None or num2 is None or num1 < 0 or num2 < 0:
+    # Check for invalid input (None or Zero or Negative)
+    if num1 is None or num2 is None or num1 <= 0 or num2 <= 0:
         return "Invalid Input. Please Enter Valid Positive Word Numbers"
     
     gcd_value = gcd(num1, num2)

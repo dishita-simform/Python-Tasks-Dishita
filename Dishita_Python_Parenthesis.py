@@ -1,4 +1,7 @@
 def generate_parentheses(n):
+    if n == 0:  # Edge case handling
+        return []
+
     result = []
 
     def backtrack(current, open_count, close_count):
