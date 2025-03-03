@@ -10,24 +10,31 @@ class TestWordNumberGCD(unittest.TestCase):
         self.assertEqual(word_to_number("eight"), 8)
         self.assertEqual(word_to_number("zero"), 0)
         self.assertEqual(word_to_number("minusfive"), None)
+        self.assertEqual(word_to_number("threefour"), 34)
+        self.assertEqual(word_to_number("sevensixfive"), 765)
 
     def test_number_to_word(self):
         self.assertEqual(number_to_word(1), "one")
         self.assertEqual(number_to_word(5), "five")
         self.assertEqual(number_to_word(9), "nine")
         self.assertEqual(number_to_word(0), "zero")
+        self.assertEqual(number_to_word(34), "threefour")
+        self.assertEqual(number_to_word(765), "sevensixfive")
 
     def test_gcd(self):
         self.assertEqual(gcd(8, 12), 4)
         self.assertEqual(gcd(54, 24), 6)
         self.assertEqual(gcd(17, 5), 1)
         self.assertEqual(gcd(100, 10), 10)
+        self.assertEqual(gcd(765, 34), 17)
 
     def test_compute_gcd(self):
         self.assertIn("GCD in Number: 2", compute_gcd("two", "four"))
         self.assertIn("GCD in Words: one", compute_gcd("three", "five"))
+        self.assertIn("GCD in Words: two", compute_gcd("eight", "two"))
         self.assertEqual(compute_gcd("minusone", "five"), "Invalid Input. Please Enter Valid Positive Word Numbers")
         self.assertEqual(compute_gcd("zero", "five"), "Invalid Input. Please Enter Valid Positive Word Numbers")
+        self.assertEqual(compute_gcd("seven", "zero"), "Invalid Input. Please Enter Valid Positive Word Numbers")
 
 if __name__ == "__main__":
     unittest.main()

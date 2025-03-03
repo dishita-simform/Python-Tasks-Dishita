@@ -11,28 +11,39 @@ def word_to_number(word):
         return None  
     
     while i < len(word):
-        for key in word_map:
+        key_list = list(word_map.keys())
+        j = 0
+        while j < len(key_list):
+            key = key_list[j]
             if word[i:].startswith(key):
                 num_str += word_map[key]
                 i += len(key) - 1
                 break
+            j += 1
         i += 1
     
     return int(num_str) if num_str else None
 
 def number_to_word(num):
     num_map = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    return "".join(num_map[int(digit)] for digit in str(num))
+    
+    result = ""
+    i = 0
+    num_str = str(num)
+    while i < len(num_str):
+        result += num_map[int(num_str[i])]
+        i += 1
+        
+    return result
 
 def gcd(a, b):
-    if b == 0:
-        return a
-    return gcd(b, a % b)
+    while b != 0:
+        a, b = b, a % b
+    return a
 
 def compute_gcd(word1, word2):
     num1, num2 = word_to_number(word1), word_to_number(word2)
     
-    # Check for invalid input (None or Zero or Negative)
     if num1 is None or num2 is None or num1 <= 0 or num2 <= 0:
         return "Invalid Input. Please Enter Valid Positive Word Numbers"
     
